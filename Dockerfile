@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl &&\
     unzip temp.zip v2ray v2ctl geoip.dat geosite.dat &&\
     mv v2ray v &&\
     rm -f temp.zip &&\
+    echo '<!DOCTYPE html><html><head><title>Welcome!</title><style>body{backgroupd:#10151f}</style></head><body><h1>Stay hungry Stay foolish!</h1><p><em>Thinkng is happness.</em></p></body></html>' >> /usr/share/nginx/html/index.html &&\
     chmod -v 755 v v2ctl entrypoint.sh &&\
     echo 'ewoJImxvZyI6IHsKCQkiYWNjZXNzIjogIi9kZXYvbnVsbCIsCgkJImVycm9yIjogIi9kZXYvbnVs\
 bCIsCgkJImxvZ2xldmVsIjogIndhcm5pbmciCgl9LAoJImluYm91bmRzIjogW3sKCQkJInBvcnQi\
