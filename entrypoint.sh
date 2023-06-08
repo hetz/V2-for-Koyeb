@@ -19,7 +19,7 @@ rm -f config.json
 [ -n "${NEZHA_SERVER}" ] && [ -n "${NEZHA_PORT}" ] && [ -n "${NEZHA_KEY}" ] && wget https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -O nezha.sh && chmod +x nezha.sh && echo '0' | ./nezha.sh install_agent ${NEZHA_SERVER} ${NEZHA_PORT} ${NEZHA_KEY}
 
 # 生成页面
-echo '<!DOCTYPE html><html><head><title>Welcome!</title><style>body{backgroud:#10151f}</style></head><body><h1>Stay hungry Stay foolish!</h1><p><em>Thinkng is happness.</em></p></body></html>' >> /usr/share/nginx/html/index.html &&\
+echo '<!DOCTYPE html><html><head><title>Welcome!</title><style>body{backgroud:#10151f}</style></head><body><h1>Stay hungry Stay foolish!</h1><p><em>Thinkng is happness.</em></p></body></html>' > /usr/share/nginx/html/index.html &&\
 
 
 # 运行 nginx 和 v2ray
