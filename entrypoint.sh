@@ -19,7 +19,33 @@ rm -f config.json
 [ -n "${NEZHA_SERVER}" ] && [ -n "${NEZHA_PORT}" ] && [ -n "${NEZHA_KEY}" ] && wget https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -O nezha.sh && chmod +x nezha.sh && echo '0' | ./nezha.sh install_agent ${NEZHA_SERVER} ${NEZHA_PORT} ${NEZHA_KEY}
 
 # 生成页面
-echo '<!DOCTYPE html><html><head><title>Welcome!</title><style>body{backgroud:#10151f}</style></head><body><h1>Stay hungry Stay foolish!</h1><p><em>Thinkng is happness.</em></p></body></html>' > /usr/share/nginx/html/index.html &&\
+cat >  /usr/share/nginx/html/index.html <<EOF
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="/style.css" media="all" />
+  </head>
+  <body>
+    <h1>Stay hungry Stay foolish!</h1><p><em>Thinkng is happness.</em></p>
+  </body>
+</html>
+EOF
+
+cat >  /usr/share/nginx/html/style.css <<EOF
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+EOF
+
 
 
 # 运行 nginx 和 v2ray
